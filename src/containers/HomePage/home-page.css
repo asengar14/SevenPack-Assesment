@@ -1,0 +1,18 @@
+.page-container {
+    width: 80%;
+    margin: auto;
+}
+
+.card-container {
+    display: flex;
+}
+
+.banner-card{
+    flex: 1;
+}
+.common-card{
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+ }

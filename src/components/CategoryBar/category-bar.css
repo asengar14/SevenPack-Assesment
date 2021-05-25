@@ -1,0 +1,48 @@
+.category-container {
+    height: 15vh;
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+
+.heading {
+    flex: 2;
+    font-size: 3.2rem;
+    font-weight: 900;
+}
+
+.right-pane-container {
+    flex: 1;
+    display: flex;
+}
+
+.bookmark {
+    background-color: var(--primaryColor);
+    padding: 8px 10px;
+    border-radius: 5px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    padding-left: 5px;
+    font-size: small;   
+}
+
+.bookmark-icon {
+    position: relative;
+    top: 4px;
+    padding-right: 8px;
+    padding-left: 5px;
+}
+
+.filter {
+    flex : 1;
+    text-align: end;
+}
+
+.filter-dropdown {
+    width: 90%;
+    font-size: 1rem;
+    border: none;
+    font-family: 'Roboto', sans-serif;
+    border-bottom: 2px solid darkgray;
+    height: 100%;
+}

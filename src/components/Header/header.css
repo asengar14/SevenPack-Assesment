@@ -1,0 +1,40 @@
+.header{
+    background-color: #09357B;
+
+}
+
+.item-container {
+    display: flex;
+    height: 8rem;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+
+}
+
+.the-peak-logo {
+    flex: 3;
+    text-align: start;
+}
+
+
+.search-bar{
+    width: 8%;
+    text-align: end;
+    position: relative;
+    top: 3.2rem;
+    border-bottom: 3px solid white;
+}
+
+.logo-style {
+    width: 15%;
+    object-fit: contain;
+}
+
+.search-icon {
+    position: relative;
+    right:3rem;
+    bottom: 0.5rem;
+    object-fit: contain;
+}

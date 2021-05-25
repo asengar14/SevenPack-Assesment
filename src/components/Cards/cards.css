@@ -1,0 +1,104 @@
+.main-card-content {
+    background-color: var(--secondaryColor);
+    background-image: url("../../assets/logo_white.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 60vh;
+    border-bottom: 4px solid green;
+    display: flex;
+    align-items: flex-end;
+}
+
+.no-image-card-content {
+    width: 270px;
+    height: 20vh;
+    margin-left: 1.9rem;
+    margin-top: 2rem;
+    border-bottom: 4px solid orange;
+    background-color: var(--primaryColor);
+    color: white;
+}
+
+.common-card-content {
+    background-color: var(--secondaryColor);
+    background-image: url("../../assets/logo_white.png");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: contain;
+    background-position: center;
+    width: 270px;
+    height: 35vh;
+    border-bottom: 4px solid red;
+    margin-left: 1.9rem;
+    display: flex;
+    align-items: flex-end;
+}
+
+.main-card-text-content{
+    width: 100%;
+    background-color: var(--primaryColorAlpha);
+    height: 8rem;
+    color: white;
+    padding : 0.5rem;
+}
+
+.main-card-text-heading{
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: Georgia, serif;
+    overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-line-clamp: 2; /* number of lines to show */
+   -webkit-box-orient: vertical;
+}
+
+.main-card-text-link{
+    position: relative;
+    top: 10px;
+    font-size: 0.9rem;
+    width: 100%;
+    font-weight: 300;
+    color: white;
+    font-family: 'Roboto', serif;
+}
+
+.common-card-text-content{
+    width: 100%;
+    background-color: var(--primaryColorAlpha);
+    height: 6rem;
+    padding : 0.5rem;
+}
+
+.common-card-text-heading{
+    font-size: 1.2rem;
+    color: white;
+    font-weight: bold;
+    font-family: Georgia, serif;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+   -webkit-line-clamp: 4; /* number of lines to show */
+   -webkit-box-orient: vertical;
+}
+
+.no-image-card-text-content{
+    background-color: var(--primaryColorAlpha);
+    height: 6rem;
+    padding : 0.5rem;
+}
+
+.no-image-card-heading{
+    font-size: 1.2rem;
+    color: white;
+    font-weight: bold;
+    font-family: Georgia, serif;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+   -webkit-line-clamp: 4; /* number of lines to show */
+   -webkit-box-orient: vertical;
+
+}
