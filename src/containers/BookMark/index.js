@@ -8,7 +8,7 @@ import Cards from "../../components/Cards";
 import Loader from "../../components/Loader";
 import reducer, {initialState} from "../../Reducers";
 
-const HomePage = (props) => {
+const BookMark = (props) => {
 
   const getStoriesSelector = (newsArray,noOfItem) => {
     return newsArray.splice(0,noOfItem);
@@ -92,4 +92,4 @@ const state = useSelector((state) => state);
   );
 };
 
-export default HomePage;
+export default BookMark;

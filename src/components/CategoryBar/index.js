@@ -7,28 +7,16 @@ import bookmarkon from "../../assets/bookmarkon.svg";
 import Loader from "../Loader";
 
 const CategoryBar = (props) => {
-//  const { fetchRequest, getTopNews } = props;
 
-  const dispatch = useDispatch();
- // const state = useSelector((state) => state.topNewsData);
-  const isLoading = useSelector((state) => state.isLoading);
-
+  const {title, isRightPane } = props;
   useEffect(() => {
-   // fetchRequest(requests.search, genres.topNews);
-    dispatch({
-      type: ActionType.FETCH_ACTION,
-      fetchTypeRequest: requests.search,
-      serviceName: genres.topNews,
-    });
-  }, [dispatch]);
-
-  //console.log("+++++++++++++" + isLoading);
+    console.log("Category Bar")
+  }, []);
 
   return (
     <div className="category-container">
-      {isLoading && <Loader />}
-      <p className="heading">Top Stories</p>
-      <div className="right-pane-container">
+      <p className="heading">{title}</p>
+      {isRightPane && <div className="right-pane-container">
         <div className="bookmark">
           <img className = "bookmark-icon" src={bookmarkon} alt="Book mark icon" />
           VIEW BOOKMARK
@@ -41,6 +29,7 @@ const CategoryBar = (props) => {
             </select>
         </div>
       </div>
+      }
 
       {/* {state?.results?.map(item => (<div>{item.webTitle}</div>))} */}
     </div>

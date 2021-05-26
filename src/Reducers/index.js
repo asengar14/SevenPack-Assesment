@@ -3,6 +3,8 @@ import { genres } from "../Utils/requests";
 
 export const initialState = {
   topNewsData: {},
+  businessData: {},
+  sportsData: {},
   isLoading : false
   
 };
@@ -17,17 +19,19 @@ const reducer = (state = initialState, action) => {
           topNewsData: action.result,
           isLoading : false
         };
-      } else if (action.requestInfo === genres.topRatedMoves) {
-        console.log("REDUCER CALL top rated" + JSON.stringify(action.result));
+      } else if (action.requestInfo === genres.business) {
+        console.log("REDUCER CALL business" + JSON.stringify(action.result));
         return {
           ...state,
-          topRated: action.result,
+          businessData: action.result,
+          isLoading : false
         };
-      } else if (action.requestInfo === genres.actionMovies) {
-        console.log("REDUCER CALL trending" + JSON.stringify(action.result));
+      } else if (action.requestInfo === genres.sports) {
+        console.log("REDUCER CALL sport" + JSON.stringify(action.result));
         return {
           ...state,
-          actionMovies: action.result,
+          sportsData: action.result,
+          isLoading : false
         };
       } else if (action.requestInfo === genres.comedyMovies) {
         console.log("REDUCER CALL trending" + JSON.stringify(action.result));

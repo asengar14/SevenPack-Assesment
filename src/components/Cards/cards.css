@@ -20,7 +20,7 @@
     color: white;
 }
 
-.common-card-content {
+.side-card-content {
     background-color: var(--secondaryColor);
     background-image: url("../../assets/logo_white.png");
     background-repeat: no-repeat;
@@ -65,14 +65,14 @@
     font-family: 'Roboto', serif;
 }
 
-.common-card-text-content{
+.side-card-text-content{
     width: 100%;
     background-color: var(--primaryColorAlpha);
     height: 6rem;
     padding : 0.5rem;
 }
 
-.common-card-text-heading{
+.side-card-text-heading{
     font-size: 1.2rem;
     color: white;
     font-weight: bold;
@@ -101,4 +101,46 @@
    -webkit-line-clamp: 4; /* number of lines to show */
    -webkit-box-orient: vertical;
 
+}
+
+.common-card-content {
+    background-color: var(--secondaryColor);
+    background-image: url("../../assets/logo_white.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 50vh;
+    width: 380px;
+    border-bottom: 4px solid red;
+    display: flex;
+    align-items: flex-end;
+}
+
+.common-card-text-content{
+    width: 100%;
+    background-color: var(--primaryColorAlpha);
+    height: 8rem;
+    color: white;
+}
+
+.common-card-text-heading{
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: Georgia, serif;
+    overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-line-clamp: 2; /* number of lines to show */
+   -webkit-box-orient: vertical;
+}
+
+.common-card-text-link{
+    position: relative;
+    top: 10px;
+    font-size: 0.9rem;
+    width: 100%;
+    font-weight: 300;
+    color: white;
+    font-family: 'Roboto', serif;
 }

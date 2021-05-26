@@ -1,0 +1,5 @@
+.footer-container {
+    background-color: var(--primaryColor);
+    height : 30vh;
+    margin-top: 7rem;
+}
