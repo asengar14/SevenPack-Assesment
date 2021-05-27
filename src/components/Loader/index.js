@@ -3,7 +3,7 @@ import "./loader.css"
 
 const Loader = () => {
     return (
-        <div class="spinning-loader"></div>
+        <div className="spinning-loader"></div>
 
     )
 }

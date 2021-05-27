@@ -23,24 +23,24 @@ const dispatch = useDispatch();
 const state = useSelector((state) => state);
 
   useEffect(() => {
-    const getNewsGenre = (fetchTypeRequest, serviceName) => {
-      dispatch({
-        type: ActionType.FETCH_ACTION,
-        fetchTypeRequest: fetchTypeRequest,
-        serviceName: serviceName,
-      });
-    }
+  //   const getNewsGenre = (fetchTypeRequest, serviceName) => {
+  //     dispatch({
+  //       type: ActionType.FETCH_ACTION,
+  //       fetchTypeRequest: fetchTypeRequest,
+  //       serviceName: serviceName,
+  //     });
+  //   }
     
 
     
-  // Top News API Call   
-  getNewsGenre(requests.search, genres.topNews)
+  // // Top News API Call   
+  // getNewsGenre(requests.search, genres.topNews)
   
-  // Business New API Call  
-  getNewsGenre(requests.business, genres.business)
+  // // Business New API Call  
+  // getNewsGenre(requests.business, genres.business)
   
-  // Sports News API Call  
-  getNewsGenre(requests.sports, genres.sports)
+  // // Sports News API Call  
+  // getNewsGenre(requests.sports, genres.sports)
 
 
 
@@ -58,34 +58,14 @@ const state = useSelector((state) => state);
   let heroCardGroup = topNewsDataResults && getStoriesSelector(topNewsDataResults, 5);
   let bannerCardData = heroCardGroup && getStoriesSelector(heroCardGroup, 1);
   let businessCardData = businessDataResults && getStoriesSelector(businessDataResults, 3);
-  let sportsCardData = sportsDataResults && getStoriesSelector(sportsDataResults, 3);
+  let sportsCardData = sportsDataResults && getStoriesSelector(sportsDataResults, 8);
 
   return (
     <div className="page-container">
-      {state.isLoading && <Loader />}
-      <CategoryBar title = {"Top Stories"} isRightPane = {true}/>
-      <div className="card-container">
-        <div className="banner-card">
-          <Cards data = {bannerCardData && bannerCardData[0]} cardType="bannerCard" />
-        </div>
-
-        <div className="side-card">
-          {heroCardGroup && heroCardGroup.map((item, index) => (
-              <Cards key = {index} data={item} cardType="sideCard" index = {index}/> 
-          ))}
-        </div>
-      </div>
-
-        <div className="common-card">
-          {businessCardData && businessCardData.map((item, index) => (
-              <Cards key = {index} data={item} cardType="commonCard" index = {index}/> 
-          ))}
-        </div>
-
-        <CategoryBar title = {"Sports"} isRightPane = {false}/>
+     <CategoryBar title = {"All Bookmark"} isRightPane = {false}/>
         <div className="common-card">
           {sportsCardData && sportsCardData.map((item, index) => (
-              <Cards key = {index} data={item} cardType="commonCard" index = {index}/> 
+              <Cards key = {index} data={item} cardType="commonCard"/> 
           ))}
         </div>
     </div>

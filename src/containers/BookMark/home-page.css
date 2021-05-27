@@ -2,25 +2,3 @@
     width: 80%;
     margin: auto;
 }
-
-.card-container {
-    display: flex;
-}
-
-.banner-card{
-    flex: 1;
-}
-
-.side-card{
-    flex: 1;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
- }
-
- .common-card{
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 2rem;
-    justify-content: space-between;
- }

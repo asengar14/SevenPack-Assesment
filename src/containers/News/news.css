@@ -1,0 +1,11 @@
+.page-container {
+    width: 80%;
+    margin: auto;
+    margin-top: 4rem;
+}
+
+.publication-date{
+    margin-top: 1.8rem;
+    font-family :Arial, Helvetica, sans-serif;
+    color: black;
+}

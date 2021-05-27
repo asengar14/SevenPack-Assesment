@@ -8,7 +8,7 @@ import Cards from "../../components/Cards";
 import Loader from "../../components/Loader";
 import reducer, {initialState} from "../../Reducers";
 
-const HomePage = (props) => {
+const HomePage = () => {
 
   const getStoriesSelector = (newsArray,noOfItem) => {
     return newsArray.splice(0,noOfItem);
@@ -51,9 +51,6 @@ const state = useSelector((state) => state);
   const topNewsDataResults = getGenreDataFromStore('topNewsData')
   const businessDataResults = getGenreDataFromStore('businessData')
   const sportsDataResults = getGenreDataFromStore('sportsData')
-  // state["topNewsData"].results;
-  console.log("++++++++++"+JSON.stringify(state.topNewsData.results));
-  
 
   let heroCardGroup = topNewsDataResults && getStoriesSelector(topNewsDataResults, 5);
   let bannerCardData = heroCardGroup && getStoriesSelector(heroCardGroup, 1);

@@ -1,0 +1,17 @@
+.bookmark {
+    background-color: var(--primaryColor);
+    padding: 8px 10px;
+    border-radius: 5px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    padding-left: 5px;
+    font-size: small;
+    width: 135px;
+}
+
+.bookmark-icon {
+    position: relative;
+    top: 4px;
+    padding-right: 8px;
+    padding-left: 5px;
+}

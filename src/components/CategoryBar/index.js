@@ -1,23 +1,30 @@
 import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import "./category-bar.css";
-import { genres, requests } from "../../Utils/requests";
-import * as ActionType from "../../Actions";
 import bookmarkon from "../../assets/bookmarkon.svg";
-import Loader from "../Loader";
+import { useHistory } from "react-router-dom";
+import BookmarkButton from "../BookmarkButton";
 
 const CategoryBar = (props) => {
 
   const {title, isRightPane } = props;
+
+  const history = useHistory();
+  
   useEffect(() => {
     console.log("Category Bar")
   }, []);
+
+
+  const handleClickBookmark = () => {
+    history.push('/bookmark')
+  }
 
   return (
     <div className="category-container">
       <p className="heading">{title}</p>
       {isRightPane && <div className="right-pane-container">
-        <div className="bookmark">
+        {/* <BookmarkButton/> */}
+        <div className="bookmark" onClick = {() => {handleClickBookmark()}}>
           <img className = "bookmark-icon" src={bookmarkon} alt="Book mark icon" />
           VIEW BOOKMARK
         </div>

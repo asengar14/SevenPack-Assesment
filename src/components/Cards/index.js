@@ -1,8 +1,17 @@
 import React from "react";
 import "./cards.css";
+import { useHistory, useParams } from "react-router-dom";
 
-const Cards = ({ data, index, cardType }) => {
+const Cards = ({ data, index, cardType, match }) => {
   let card = null;
+
+  const history = useHistory();
+  
+  const handleClickCard = () => {
+     console.log("PARAMS"+JSON.stringify(data.id))
+     history.push(`/${data.id}`)
+
+  }
 
   if (cardType === "bannerCard") {
     // Main Card with Image
@@ -11,17 +20,11 @@ const Cards = ({ data, index, cardType }) => {
         {/* {data.name} */}
         <div className="main-card-text-content">
           <p className="main-card-text-heading">{data && data.webTitle}</p>
-          <a
-            href={data && data.webUrl}
-            target="blank"
-            className="main-card-text-link"
-          >
-            {data && data.webUrl}
-          </a>
+          <p className="main-card-text-link">{data && data.webUrl}</p>
         </div>
       </div>
     );
-  } else if (cardType === "sideCard" && index === 2 || index === 3) {
+  } else if (cardType === "sideCard" && (index === 2 || index === 3)) {
     // Side Card with No Image
     card = (
       <div className="no-image-card-content">
@@ -49,20 +52,14 @@ const Cards = ({ data, index, cardType }) => {
         {/* {data.name} */}
         <div className="common-card-text-content">
           <p className="common-card-text-heading">{data && data.webTitle}</p>
-          <a
-            href={data && data.webUrl}
-            target="blank"
-            className="common-card-text-link"
-          >
-            {data && data.webUrl}
-          </a>
+          <p className="common-card-text-link">{data && data.webUrl}</p>
         </div>
       </div>
     );
   }
 
   return (
-    <>{card}</>
+    <div onClick = {() => {handleClickCard()}}>{card}</div>
   );
 };
 

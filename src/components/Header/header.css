@@ -38,3 +38,7 @@
     bottom: 0.5rem;
     object-fit: contain;
 }
+
+.the-peak-logo:hover {
+    cursor: pointer;
+}

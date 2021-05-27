@@ -5,6 +5,7 @@ export const initialState = {
   topNewsData: {},
   businessData: {},
   sportsData: {},
+  singleItemData: {},
   isLoading : false
   
 };
@@ -20,48 +21,24 @@ const reducer = (state = initialState, action) => {
           isLoading : false
         };
       } else if (action.requestInfo === genres.business) {
-        console.log("REDUCER CALL business" + JSON.stringify(action.result));
+        //console.log("REDUCER CALL business" + JSON.stringify(action.result));
         return {
           ...state,
           businessData: action.result,
           isLoading : false
         };
       } else if (action.requestInfo === genres.sports) {
-        console.log("REDUCER CALL sport" + JSON.stringify(action.result));
+        //console.log("REDUCER CALL sport" + JSON.stringify(action.result));
         return {
           ...state,
           sportsData: action.result,
           isLoading : false
         };
-      } else if (action.requestInfo === genres.comedyMovies) {
-        console.log("REDUCER CALL trending" + JSON.stringify(action.result));
+      } else if (action.requestInfo === genres.singleItem) {
+        //console.log("REDUCER CALL single Item" + JSON.stringify(action.result));
         return {
           ...state,
-          comedyMovies: action.result,
-        };
-      } else if (action.requestInfo === genres.horrorMovies) {
-        console.log("REDUCER CALL trending" + JSON.stringify(action.result));
-        return {
-          ...state,
-          horrorMovies: action.result,
-        };
-      } else if (action.requestInfo === genres.documentryMovies) {
-        console.log("REDUCER CALL trending" + JSON.stringify(action.result));
-        return {
-          ...state,
-          documentryMovies: action.result,
-        };
-      } else if (action.requestInfo === genres.romanticMovies) {
-        console.log("REDUCER CALL trending" + JSON.stringify(action.result));
-        return {
-          ...state,
-          romanticMovies: action.result,
-        };
-      } else if (action.requestInfo === genres.trending) {
-        console.log("REDUCER CALL trending" + JSON.stringify(action.result));
-        return {
-          ...state,
-          trending: action.result,
+          singleItemData: action.result,
         };
       }
       break;
