@@ -5,6 +5,9 @@ export const requests = {
   sports: `search?q=Sports&api-key=${API}`,
   singleItem : (itemURL) => {
     return `${itemURL}?api-key=${API}`
+  },
+  orderByGenre : (order,genre) => {
+    return `search?q=${genre}&order-by=${order}&api-key=${API}`
   }
  };
 

@@ -10,61 +10,44 @@ import reducer, {initialState} from "../../Reducers";
 
 const BookMark = (props) => {
 
+  const dispatch = useDispatch();
+  const state = useSelector((state) => state);
+
   const getStoriesSelector = (newsArray,noOfItem) => {
     return newsArray.splice(0,noOfItem);
   }
  
   const getGenreDataFromStore = (genre) => {
-    return state[`${genre}`].results
+    console.log(JSON.stringify(state))
+    return state[`${genre}`]
   }
 
 // const [state, dispatch] = useReducer(reducer, initialState);
-const dispatch = useDispatch();
-const state = useSelector((state) => state);
 
   useEffect(() => {
-  //   const getNewsGenre = (fetchTypeRequest, serviceName) => {
-  //     dispatch({
-  //       type: ActionType.FETCH_ACTION,
-  //       fetchTypeRequest: fetchTypeRequest,
-  //       serviceName: serviceName,
-  //     });
-  //   }
-    
 
-    
-  // // Top News API Call   
-  // getNewsGenre(requests.search, genres.topNews)
-  
-  // // Business New API Call  
-  // getNewsGenre(requests.business, genres.business)
-  
-  // // Sports News API Call  
-  // getNewsGenre(requests.sports, genres.sports)
+console.log("BOOKMARK" + JSON.stringify(state))
+
+  }, [state]);
 
 
-
-
-  }, [dispatch]);
-
-
-  const topNewsDataResults = getGenreDataFromStore('topNewsData')
-  const businessDataResults = getGenreDataFromStore('businessData')
-  const sportsDataResults = getGenreDataFromStore('sportsData')
+  const bookmarkItemResults = getGenreDataFromStore('bookmarkItemData')
+  // const businessDataResults = getGenreDataFromStore('businessData')
+  // const sportsDataResults = getGenreDataFromStore('sportsData')
   // state["topNewsData"].results;
-  console.log("++++++++++"+JSON.stringify(state.topNewsData.results));
+  console.log("++++BOOKMARK++++++"+JSON.stringify(state.bookmarkItemData));
   
 
-  let heroCardGroup = topNewsDataResults && getStoriesSelector(topNewsDataResults, 5);
-  let bannerCardData = heroCardGroup && getStoriesSelector(heroCardGroup, 1);
-  let businessCardData = businessDataResults && getStoriesSelector(businessDataResults, 3);
-  let sportsCardData = sportsDataResults && getStoriesSelector(sportsDataResults, 8);
+  //let heroCardGroup = topNewsDataResults && getStoriesSelector(topNewsDataResults, 5);
+  // let bannerCardData = heroCardGroup && getStoriesSelector(heroCardGroup, 1);
+  // let businessCardData = businessDataResults && getStoriesSelector(businessDataResults, 3);
+  // let sportsCardData = sportsDataResults && getStoriesSelector(sportsDataResults, 8);
 
   return (
     <div className="page-container">
      <CategoryBar title = {"All Bookmark"} isRightPane = {false}/>
         <div className="common-card">
-          {sportsCardData && sportsCardData.map((item, index) => (
+          {bookmarkItemResults && bookmarkItemResults.map((item, index) => (
               <Cards key = {index} data={item} cardType="commonCard"/> 
           ))}
         </div>

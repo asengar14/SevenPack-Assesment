@@ -6,7 +6,6 @@ import * as ActionType from "../../Actions";
 import { genres, requests } from "../../Utils/requests";
 import Cards from "../../components/Cards";
 import Loader from "../../components/Loader";
-import reducer, {initialState} from "../../Reducers";
 
 const HomePage = () => {
 
@@ -57,9 +56,10 @@ const state = useSelector((state) => state);
   let businessCardData = businessDataResults && getStoriesSelector(businessDataResults, 3);
   let sportsCardData = sportsDataResults && getStoriesSelector(sportsDataResults, 3);
 
+
+  console.log("HOME PAGE BOOK"+JSON.stringify(state.bookmarkItemData))
   return (
     <div className="page-container">
-      {state.isLoading && <Loader />}
       <CategoryBar title = {"Top Stories"} isRightPane = {true}/>
       <div className="card-container">
         <div className="banner-card">
@@ -79,7 +79,7 @@ const state = useSelector((state) => state);
           ))}
         </div>
 
-        <CategoryBar title = {"Sports"} isRightPane = {false}/>
+        <CategoryBar title = {"Sports"} isRightPane = {false} subHeading = {true}/>
         <div className="common-card">
           {sportsCardData && sportsCardData.map((item, index) => (
               <Cards key = {index} data={item} cardType="commonCard" index = {index}/> 
@@ -89,4 +89,4 @@ const state = useSelector((state) => state);
   );
 };
 
-export default HomePage;
+export default React.memo(HomePage);

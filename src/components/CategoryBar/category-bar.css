@@ -5,10 +5,24 @@
     align-items: center;
 }
 
+.sub-heading-category-container {
+    height: 15vh;
+    margin: auto;
+    display: flex;
+    align-items: flex-end;
+}
+
 .heading {
     flex: 2;
     font-size: 3.2rem;
     font-weight: 900;
+}
+
+.sub-heading {
+    flex: 2;
+    font-size: 2.5rem;
+    font-weight: 900;
+
 }
 
 .right-pane-container {

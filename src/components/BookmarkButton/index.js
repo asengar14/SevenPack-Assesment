@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 
 const BookmarkButton = (props) => {
 
-  const {title} = props;
+  const { title, handleClickBookmark } = props;
 
   const history = useHistory();
 
@@ -13,15 +13,10 @@ const BookmarkButton = (props) => {
     console.log("Category Bar")
   }, []);
 
-
-  const handleClickBookmark = () => {
-    history.push('/bookmark')
-  }
-
   return (
-        <div className="bookmark" onClick = {() => {handleClickBookmark()}}>
+        <div className="bookmark" onClick = {handleClickBookmark}>
           <img className = "bookmark-icon" src={bookmarkon} alt="Book mark icon" />
-          VIEW BOOKMARK
+          {title}
         </div>
       
   );
