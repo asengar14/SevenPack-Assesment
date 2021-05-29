@@ -1,0 +1,10 @@
+.page-container {
+    width: 80%;
+    margin: auto;
+}
+
+.common-card-bookmark{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}

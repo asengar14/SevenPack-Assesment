@@ -1,6 +1,6 @@
 import React from "react";
 import "./cards.css";
-import { useHistory, useParams } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const Cards = ({ data, index, cardType, match }) => {
   let card = null;
@@ -8,7 +8,6 @@ const Cards = ({ data, index, cardType, match }) => {
   const history = useHistory();
   
   const handleClickCard = () => {
-     console.log("PARAMS"+JSON.stringify(data.id))
      history.push(`/${data.id}`)
 
   }
@@ -17,7 +16,6 @@ const Cards = ({ data, index, cardType, match }) => {
     // Main Card with Image
     card = (
       <div className="main-card-content">
-        {/* {data.name} */}
         <div className="main-card-text-content">
           <p className="main-card-text-heading">{data && data.webTitle}</p>
           <p className="main-card-text-link">{data && data.webUrl}</p>
@@ -49,7 +47,6 @@ const Cards = ({ data, index, cardType, match }) => {
   } else if (cardType === "commonCard"){
     card = (
       <div className="common-card-content">
-        {/* {data.name} */}
         <div className="common-card-text-content">
           <p className="common-card-text-heading">{data && data.webTitle}</p>
           <p className="common-card-text-link">{data && data.webUrl}</p>

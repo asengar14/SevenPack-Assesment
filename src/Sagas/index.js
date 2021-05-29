@@ -8,7 +8,6 @@ function* fetchAction(payload) {
 
   const result = yield axios.get(
     payload.fetchTypeRequest
-    //"discover/tv?api_key=19fce9e252a152b8b3a79d037e603e3f&language=en-US&sort_by=popularity.desc"
   );
 
   if (result) {

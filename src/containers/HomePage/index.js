@@ -1,25 +1,30 @@
-import React,{ useEffect } from "react";
+/**
+ * Home page Component
+ */
+
+import React,{ useState, useEffect } from "react";
 import "./home-page.css";
 import { useDispatch, useSelector } from "react-redux";
 import CategoryBar from "../../components/CategoryBar";
 import * as ActionType from "../../Actions";
 import { genres, requests } from "../../Utils/requests";
 import Cards from "../../components/Cards";
-import Loader from "../../components/Loader";
 
 const HomePage = () => {
 
-  const getStoriesSelector = (newsArray,noOfItem) => {
-    return newsArray.splice(0,noOfItem);
-  }
+// returns number of Stories from the Story Array
+const getStoriesSelector = (newsArray,noOfItem) => {
+  return newsArray.splice(0,noOfItem);
+}
  
-  const getGenreDataFromStore = (genre) => {
-    return state[`${genre}`].results
-  }
+// returns type of genre from the store
+const getGenreDataFromStore = (genre) => {
+  return state[`${genre}`].results
+}
 
-// const [state, dispatch] = useReducer(reducer, initialState);
 const dispatch = useDispatch();
 const state = useSelector((state) => state);
+const [filterType, setFilterType] = useState('newest')
 
   useEffect(() => {
     const getNewsGenre = (fetchTypeRequest, serviceName) => {
@@ -29,9 +34,10 @@ const state = useSelector((state) => state);
         serviceName: serviceName,
       });
     }
-    
 
-    
+  // // Top News API Call to work with Dropdown filter
+  //  getNewsGenre(requests.orderByGenre(filterType, genres.topNews), genres.topNews);
+
   // Top News API Call   
   getNewsGenre(requests.search, genres.topNews)
   
@@ -40,12 +46,12 @@ const state = useSelector((state) => state);
   
   // Sports News API Call  
   getNewsGenre(requests.sports, genres.sports)
+  }, [filterType, dispatch]);
 
-
-
-
-  }, [dispatch]);
-
+  const getFilterType = async (filterType) => {
+    console.log(filterType)
+    await setFilterType(filterType)
+  }
 
   const topNewsDataResults = getGenreDataFromStore('topNewsData')
   const businessDataResults = getGenreDataFromStore('businessData')
@@ -56,11 +62,9 @@ const state = useSelector((state) => state);
   let businessCardData = businessDataResults && getStoriesSelector(businessDataResults, 3);
   let sportsCardData = sportsDataResults && getStoriesSelector(sportsDataResults, 3);
 
-
-  console.log("HOME PAGE BOOK"+JSON.stringify(state.bookmarkItemData))
   return (
     <div className="page-container">
-      <CategoryBar title = {"Top Stories"} isRightPane = {true}/>
+      <CategoryBar title = {"Top Stories"} isRightPane = {true} filterType = {getFilterType}/>
       <div className="card-container">
         <div className="banner-card">
           <Cards data = {bannerCardData && bannerCardData[0]} cardType="bannerCard" />

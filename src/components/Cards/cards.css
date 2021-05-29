@@ -11,7 +11,7 @@
 }
 
 .no-image-card-content {
-    width: 270px;
+    width: 240px;
     height: 20vh;
     margin-left: 1.9rem;
     margin-top: 2rem;
@@ -27,7 +27,7 @@
     background-position: top;
     background-size: contain;
     background-position: center;
-    width: 270px;
+    width: 240px;
     height: 35vh;
     border-bottom: 4px solid red;
     margin-left: 1.9rem;
@@ -110,10 +110,11 @@
     background-size: contain;
     background-position: center;
     height: 50vh;
-    width: 380px;
+    width: 340px;
     border-bottom: 4px solid red;
     display: flex;
     align-items: flex-end;
+    margin-bottom: 2.5rem;
 }
 
 .common-card-text-content{
@@ -143,4 +144,24 @@
     font-weight: 300;
     color: white;
     font-family: 'Roboto', serif;
+}
+
+@media only screen and (min-width: 962px) and (max-width: 1100px) {
+    .side-card-content {
+        width: 160px;
+    }
+
+    .no-image-card-content {
+        width: 160px;
+     }
+}
+
+@media only screen and (min-width: 1100px) and (max-width: 1300px){
+    .side-card-content {
+        width: 185px;
+    }
+
+    .no-image-card-content {
+        width: 185px;
+     }
 }

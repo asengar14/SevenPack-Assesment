@@ -1,4 +1,4 @@
-import { Component } from "react";
+import React from "react";
 import './App.css';
 import HomePage from "./containers/HomePage";
 import BookMark from "./containers/BookMark";
@@ -6,7 +6,7 @@ import News from "./containers/News";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import Loader from "./components/Loader";
 
 

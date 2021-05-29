@@ -9,9 +9,15 @@ import createSagaMiddleware from "redux-saga";
 import sagas from "./Sagas";
 import { Provider } from "react-redux";
 import reducer from "./Reducers";
+import { createLogger } from 'redux-logger';
+const logger = createLogger({
+  // ...options
+});
+
+
 
 const sagaMiddleware = createSagaMiddleware();
-const store = createStore(reducer, applyMiddleware(sagaMiddleware));
+const store = createStore(reducer, applyMiddleware(sagaMiddleware,logger));
 sagaMiddleware.run(sagas);
 
 
